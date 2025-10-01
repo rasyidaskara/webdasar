@@ -1,0 +1,59 @@
+<html>
+    <title>
+        Aplikasi Web Kelas 2B
+    </title>
+    <head>
+        <script type="text/javascript">
+            function tambah(){
+                var x,y,z;
+                x = document.getElementById("x").value;
+                y = document.getElementById("y").value;
+                z = Number(x) + Number(y);  
+                document.getElementById("hasil").value = z;     
+            }  
+            
+            function looping(){
+                var temp="";
+                var lop,hasil;
+                hasil = document.getElementById("hasil").value;
+                for (lop = 0; lop <= hasil; lop++){
+                    temp += "Ke - " + lop+"<br>";
+                }
+                document.getElementById("looping").innerHTML=temp;
+            }
+        </script>
+    </head>
+<body>
+    Nilai X :<input type="text" name="x" id="x"><br>
+    Nilai Y :<input type="text" name="y" id="y"><br>
+    <button type="button" onclick="tambah()"> + </button><br>
+    <input type="text" name="hasil" id="hasil"><br>
+
+    <button type="button" onclick="looping()">Looping</button>
+    <div id="looping"></div>
+
+<!-- 
+Nama : Arik Sofan Tohir xxxx<br>
+Riwayat Pekerjaan :<br>
+    1. Dosen<br>
+    2. Software Developer<br>
+<table border="1">
+    <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td>
+            <a href="detail.html">
+                Arik Sofan Tohir
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>Riwayat Pekerjaan</td>
+        <td>:</td>
+        <td>1. Dosen<br>2. Software Developer</td>
+    </tr>
+</table>
+-->
+</body>
+
+</html>
