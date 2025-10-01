@@ -31,29 +31,49 @@
 
     <button type="button" onclick="looping()">Looping</button>
     <div id="looping"></div>
+    
+    <label>Jenis Bahasa Pemrograman</label>
+    <ul id="list">
+        <li>HTML Dasar </li>
+        <li>JavaScript </li>
+    </ul>
+    <label>Jenis Bahasa Pemrograman</label>
+    <input type="text" name="bahasa" id="bahasa"><br>
+    <button id="btnAddList">Add list</button>
+    
+    <script>
+        const   addList     = document.getElementById("list");
+        const   listBaru    = document.getElementById("btnAddList");
+        var     addBahasa   = document.getElementById("bahasa");
 
-<!-- 
-Nama : Arik Sofan Tohir xxxx<br>
-Riwayat Pekerjaan :<br>
-    1. Dosen<br>
-    2. Software Developer<br>
-<table border="1">
-    <tr>
-        <td>Nama</td>
-        <td>:</td>
-        <td>
-            <a href="detail.html">
-                Arik Sofan Tohir
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td>Riwayat Pekerjaan</td>
-        <td>:</td>
-        <td>1. Dosen<br>2. Software Developer</td>
-    </tr>
-</table>
--->
+        // Deklarasi event untuk menambah listBaru
+        listBaru.addEventListener("click",function(){
+          // membuat list baru
+          const newList = document.createElement("li");
+          //newList.innerText="JS DOM";
+          newList.innerText=addBahasa.value +" "; // menambahkan script + " "
+
+          // Membuat tombol hapus
+          const btnDel = document.createElement("button");
+          btnDel.innerText = "X";
+          btnDel.className = "btnDelete";
+          // Event hapus
+          btnDel.addEventListener("click",function(){
+            newList.remove();
+          })
+
+          // Masukkn tombol kedalam li
+          newList.appendChild(btnDel);
+
+          //insert data ke HTML
+          addList.appendChild(newList);
+          addBahasa.value="";  
+        });
+
+       
+    </script>
+
+
 </body>
 
 </html>
